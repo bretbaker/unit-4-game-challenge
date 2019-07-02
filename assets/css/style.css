@@ -2,6 +2,9 @@ body {
     background-image: url("../images/star-sky-background.jpg");
     font-family: 'Poller One', cursive;
 }
+hr {
+    width: 50%;
+}
 .game-title {
     color: white;
     font-size: 3rem;
@@ -12,16 +15,15 @@ body {
     justify-content: center;
     margin: 1% auto;
 }
-.char-selection {
-    color: white;
-    font-size: 1.25rem;
+.game-row {
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.char-block {
+.char-block-select {
+    font-size: 1.25rem;
     text-align: center;
     margin: 1%;
     padding: 1%;
@@ -29,42 +31,37 @@ body {
     color: black;
     background-color: white;
 }
-.char-img {
+.char-block-enemy {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+    border: solid darkgray 5px;
+    color: black;
+    background-color: red;
+}
+.char-block-defender {
+    font-size: 1.25rem;
+    text-align: center;
+    margin: 1%;
+    padding: 1%;
+    border: solid green 5px;
+    color: white;
+    background-color: black;
+}
+.char-img-select {
     width: 200px;
     height: auto;
     border: solid 1px black;
 }
-.char-selected {
+.char-img-defender {
+    width: 200px;
+    height: auto;
+    border: solid 1px white;
+}
+.section-title {
     color: white;
     font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1% auto;
-}
-.enemies {
-    color: white;
-    font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1% auto;
-}
-.fight-section {
-    color: white;
-    font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1% auto;
-}
-.attack {
     height: 100%;
     width: 100%;
     display: flex;
@@ -75,13 +72,6 @@ body {
 #attack-button {
     font-size: 1.5rem;
 }
-.defender {
-    color: white;
-    font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1% auto;
+#restart-button {
+    font-size: 1.5rem;
 }

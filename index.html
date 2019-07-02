@@ -10,54 +10,127 @@
     <script src="assets/javascript/game.js" rel="javascript" type="text/javascript"></script>
 </head>
 <body>
+    <!-- Main Title -->
     <div class="game-title">
         <h1>Star Wars RPG!</h1>
     </div>
-    <div class="char-selection">
-        <div class="char-block">
+    <hr>
+    <!-- Character Selector -->
+    <div class="section-title">
+        <h2>Select Character</h2>
+    </div>
+    <div class="game-row">
+        <div class="char-block-select">
             <p>Obi-Wan Kenobi</p>
-            <img class="char-img" src="assets/images/obi-wan-kenobi.png">
+            <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
             <p>HP</p>
         </div>
-        <div class="char-block">
+        <div class="char-block-select">
             <p>Luke Skywalker</p>
-            <img class="char-img" src="assets/images/luke-skywalker.jpg">
+            <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
             <p>HP</p>
         </div>
-        <div class="char-block">
+        <div class="char-block-select">
             <p>Darth Sidious</p>
-            <img class="char-img" src="assets/images/darth-sidious.jpg">
+            <img class="char-img-select" src="assets/images/darth-sidious.jpg">
             <p>HP</p>
         </div>
-        <div class="char-block">
+        <div class="char-block-select">
             <p>Darth Maul</p>
-            <img class="char-img" src="assets/images/darth-maul.jpg">
+            <img class="char-img-select" src="assets/images/darth-maul.jpg">
             <p>HP</p>
         </div>
     </div>
-    <div class="char-selected">
+    <!-- Display Selected Character -->
+    <div class="section-title">
         <h2>Your Character</h2>
     </div>
-    <div>
-        <!-- This is where the selected player character will go -->
+    <div class="game-row">
+        <div class="char-block-select">
+            <p>Obi-Wan Kenobi</p>
+            <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
+            <p>HP</p>
+        </div>
+        <div class="char-block-select">
+            <p>Luke Skywalker</p>
+            <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
+            <p>HP</p>
+        </div>
+        <div class="char-block-select">
+            <p>Darth Sidious</p>
+            <img class="char-img-select" src="assets/images/darth-sidious.jpg">
+            <p>HP</p>
+        </div>
+        <div class="char-block-select">
+            <p>Darth Maul</p>
+            <img class="char-img-select" src="assets/images/darth-maul.jpg">
+            <p>HP</p>
+        </div>
     </div>
-    <div class="enemies">
+    <!-- Display Enemies Available for Attack -->
+    <div class="section-title">
         <h2>Enemies Available to Attack</h2>
     </div>
-    <div>
-        <!-- This is where the enemies available to attack will go -->
+    <div class="game-row">
+        <div class="char-block-enemy">
+            <p>Obi-Wan Kenobi</p>
+            <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
+            <p>HP</p>
+        </div>
+        <div class="char-block-enemy">
+            <p>Luke Skywalker</p>
+            <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
+            <p>HP</p>
+        </div>
+        <div class="char-block-enemy">
+            <p>Darth Sidious</p>
+            <img class="char-img-select" src="assets/images/darth-sidious.jpg">
+            <p>HP</p>
+        </div>
+        <div class="char-block-enemy">
+            <p>Darth Maul</p>
+            <img class="char-img-select" src="assets/images/darth-maul.jpg">
+            <p>HP</p>
+        </div>
     </div>
-    <div class="fight-section">
+    <!-- Display Game Section with Attack Button -->
+    <div class="section-title">
         <h2>Fight Section</h2>
     </div>
-    <div class="attack">
+    <div class="game-row">
         <button id="attack-button" type="button">Attack</button>
     </div>
-    <div class="defender">
+    <!-- Display Character that Player is Attacking -->
+    <div class="section-title">
         <h2>Defender</h2>
     </div>
-    <div>
-        <!-- This is where the defender will go -->
+    <div class="game-row">
+        <div class="char-block-defender">
+            <p>Obi-Wan Kenobi</p>
+            <img class="char-img-defender" src="assets/images/obi-wan-kenobi.png">
+            <p>HP</p>
+        </div>
+        <div class="char-block-defender">
+            <p>Luke Skywalker</p>
+            <img class="char-img-defender" src="assets/images/luke-skywalker.jpg">
+            <p>HP</p>
+        </div>
+        <div class="char-block-defender">
+            <p>Darth Sidious</p>
+            <img class="char-img-defender" src="assets/images/darth-sidious.jpg">
+            <p>HP</p>
+        </div>
+        <div class="char-block-defender">
+            <p>Darth Maul</p>
+            <img class="char-img-defender" src="assets/images/darth-maul.jpg">
+            <p>HP</p>
+        </div>
+    </div>
+    <!-- Display Message Output to User -->
+    <div class="game-row">
+        <p></p>
+        <p></p>
+        <button id="restart-button" type="button">Restart</button>
     </div>
 </body>
 </html>
