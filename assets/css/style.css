@@ -83,6 +83,9 @@ hr {
 #attack-button {
     font-size: 1.5rem;
 }
+#attack-button:hover {
+    cursor: pointer;
+}
 #restart-button {
     font-size: 1.5rem;
 }
