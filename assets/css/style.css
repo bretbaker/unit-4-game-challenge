@@ -1,3 +1,4 @@
+/* Elements */
 body {
     background-image: url("../images/star-background.jpg");
     font-family: 'Poller One', cursive;
@@ -8,6 +9,18 @@ hr {
 .game-title {
     color: white;
     font-size: 3rem;
+    height: 100%;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 1% auto;
+}
+
+/* Classes */
+.section-title {
+    color: white;
+    font-size: 2rem;
     height: 100%;
     width: 100%;
     display: flex;
@@ -31,6 +44,9 @@ hr {
     color: black;
     background-color: white;
 }
+.char-block-select:hover {
+    cursor: pointer;
+}
 .char-block-enemy {
     font-size: 1.25rem;
     text-align: center;
@@ -39,6 +55,9 @@ hr {
     border: solid black 5px;
     color: black;
     background-color: red;
+}
+.char-block-enemy:hover {
+    cursor: pointer;
 }
 .char-block-defender {
     font-size: 1.25rem;
@@ -59,16 +78,8 @@ hr {
     height: auto;
     border: solid 1px white;
 }
-.section-title {
-    color: white;
-    font-size: 2rem;
-    height: 100%;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 1% auto;
-}
+
+/* IDs */
 #attack-button {
     font-size: 1.5rem;
 }

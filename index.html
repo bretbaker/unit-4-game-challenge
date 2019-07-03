@@ -16,132 +16,292 @@
     </div>
     <hr>
     <!-- Character Selector -->
-    <div class="section-title">
+    <div id="sc-1" class="section-title">
         <h2>Select Character</h2>
     </div>
-    <div class="game-row">
-        <div class="char-block-select">
+    <div id="gr-1" class="game-row">
+        <div id="ob-1" class="char-block-select">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-select">
+        <div id="ls-1" class="char-block-select">
             <p>Luke Skywalker</p>
             <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-select">
+        <div id="ds-1" class="char-block-select">
             <p>Darth Sidious</p>
             <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-select">
+        <div id="dm-1" class="char-block-select">
             <p>Darth Maul</p>
             <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
     </div>
     <!-- Display Selected Character -->
-    <div class="section-title">
+    <div id="sc-2" class="section-title">
         <h2>Your Character</h2>
     </div>
-    <div class="game-row">
-        <div class="char-block-select">
+    <div id="gr-2" class="game-row">
+        <div id="ob-2" class="char-block-select">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-select">
+        <div id="ls-2" class="char-block-select">
             <p>Luke Skywalker</p>
             <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-select">
+        <div id="ds-2" class="char-block-select">
             <p>Darth Sidious</p>
             <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-select">
+        <div id="dm-2" class="char-block-select">
             <p>Darth Maul</p>
             <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
     </div>
     <!-- Display Enemies Available for Attack -->
-    <div class="section-title">
+    <div id="sc-3" class="section-title">
         <h2>Enemies Available to Attack</h2>
     </div>
-    <div class="game-row">
-        <div class="char-block-enemy">
+    <div id="gr-3" class="game-row">
+        <div id="ob-3" class="char-block-enemy">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-enemy">
+        <div id="ls-3" class="char-block-enemy">
             <p>Luke Skywalker</p>
             <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-enemy">
+        <div id="ds-3" class="char-block-enemy">
             <p>Darth Sidious</p>
             <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
-        <div class="char-block-enemy">
+        <div id="dm-3" class="char-block-enemy">
             <p>Darth Maul</p>
             <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>HP</p>
+            <p>100</p>
         </div>
     </div>
     <!-- Display Game Section with Attack Button -->
-    <div class="section-title">
+    <div id="sc-4" class="section-title">
         <h2>Fight Section</h2>
     </div>
-    <div class="game-row">
+    <div id="gr-4" class="game-row">
         <button id="attack-button" type="button">Attack</button>
     </div>
-    <!-- Display Character that Player is Attacking -->
-    <div class="section-title">
+    <!-- Display Current Defender -->
+    <div id="sc-5" class="section-title">
         <h2>Defender</h2>
     </div>
-    <div class="game-row">
-        <div class="char-block-defender">
+    <div id="gr-5" class="game-row">
+        <div id="ob-4" class="char-block-defender">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-defender" src="assets/images/obi-wan-kenobi.png">
-            <p>HP</p>
+            <p id="ob-defender-hp">100</p>
         </div>
-        <div class="char-block-defender">
+        <div id="ls-4" class="char-block-defender">
             <p>Luke Skywalker</p>
             <img class="char-img-defender" src="assets/images/luke-skywalker.jpg">
-            <p>HP</p>
+            <p id="ls-defender-hp">100</p>
         </div>
-        <div class="char-block-defender">
+        <div id="ds-4" class="char-block-defender">
             <p>Darth Sidious</p>
             <img class="char-img-defender" src="assets/images/darth-sidious.jpg">
-            <p>HP</p>
+            <p id="ds-defender-hp">100</p>
         </div>
-        <div class="char-block-defender">
+        <div id="dm-4" class="char-block-defender">
             <p>Darth Maul</p>
             <img class="char-img-defender" src="assets/images/darth-maul.jpg">
-            <p>HP</p>
+            <p id="dm-defender-hp">100</p>
         </div>
     </div>
     <!-- Display Message Output to User -->
-    <div class="game-row">
+    <div id="gr-6" class="game-row">
         <p></p>
         <p></p>
         <button id="restart-button" type="button">Restart</button>
     </div>
-    <!-- Start of jQuery -->
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
-    
-        $(document).ready(() => {
+
+    <!-- Add jQuery CDN -->
+    <script
+    src="https://code.jquery.com/jquery-3.4.1.min.js"
+    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+    crossorigin="anonymous"></script>
+
+    <!-- jQuery Script -->
+    <script>
+
+        // declare global objects
+        // -----------------------------------------------------
+        let obiWan = {
+            hp: 100,
+            attack: 10,
+            defender: false,
+            alive: true,
+        };
+        let lukeSkywalker = {
+            hp: 100,
+            attack: 10,
+            defender: false,
+            alive: true,
+        };
+        let darthSidious = {
+            hp: 100,
+            attack: 10,
+            defender: false,
+            alive: true,
+        };
+        let darthMaul = {
+            hp: 100,
+            attack: 10,
+            defender: false,
+            alive: true,
+        };
+
+        // declare global functions
+        // ---------------------------------------------------------
+
+        // first function run when page initially loads
+        let start = () => {
+            $('#sc-2').hide();
+            $('#sc-3').hide();
+            $('#sc-4').hide();
+            $('#sc-5').hide();
+            $('#gr-2').hide();
+            $('#gr-3').hide();
+            $('#gr-4').hide();
+            $('#gr-5').hide();
+            $('#gr-6').hide();
+        }
+
+        // function run if Obi-Wan is selected as player
+        let obiPlayer = () => {
+            $('#sc-1').slideUp();
+            $('#gr-1').slideUp();
+            $('#sc-2').slideDown();
+            $('#gr-2').slideDown();
+            $('#ls-2').fadeOut();
+            $('#ds-2').fadeOut();
+            $('#dm-2').fadeOut();
+            $('#sc-3').slideDown();
+            $('#gr-3').slideDown();
+            $('#ob-3').fadeOut();
+        }
+
+        // function run if Luke is selected s defender
+        let lukeDefender = () => {
+            $('#ls-3').fadeOut();
+            $('#sc-4').slideDown();
+            $('#gr-4').slideDown();
+            $('#sc-5').slideDown();
+            $('#gr-5').slideDown();
+            $('#ob-4').hide();
+            $('#ds-4').hide();
+            $('#dm-4').hide();
+            $('#ls-4').fadeIn();
+            lukeSkywalker.defender = true;
+            console.log(lukeSkywalker.defender);
+            console.log(lukeSkywalker.alive);
+            console.log(lukeSkywalker.hp);
+        }
+
+        // function run if Darth Sidious is selected as defender
+        let sidiousDefender = () => {
+            $('#ds-3').fadeOut();
+            $('#sc-4').slideDown();
+            $('#gr-4').slideDown();
+            $('#sc-5').slideDown();
+            $('#gr-5').slideDown();
+            $('#ob-4').hide();
+            $('#ls-4').hide();
+            $('#dm-4').hide();
+            $('#ds-4').fadeIn();
+            darthSidious.defender = true;
+            console.log(darthSidious.defender);
+            console.log(darthSidious.alive);
+            console.log(darthSidious.hp);
+        }
+
+        // function run if Darth Maul is selected as defender
+        let maulDefender = () => {
+            $('#dm-3').fadeOut();
+            $('#sc-4').slideDown();
+            $('#gr-4').slideDown();
+            $('#sc-5').slideDown();
+            $('#gr-5').slideDown();
+            $('#ob-4').hide();
+            $('#ls-4').hide();
+            $('#ds-4').hide();
+            $('#dm-4').fadeIn();
+            darthMaul.defender = true;
+            console.log(darthMaul.defender);
+            console.log(darthMaul.alive);
+            console.log(darthMaul.hp);
+        }
 
 
+        // -------------------------------------------------------------
+        // -------------------------------------------------------------
+        // start jquery global function
+        // -------------------------------------------------------------
+        // -------------------------------------------------------------
 
+        $(document).ready(function() {
+            
+            start();
 
-        })
-    
+            // Game played as Obi-Wan Kenobi
+                // Stage 1 Obi-Wan Kenobi selected as Player
+                if ($('#ob-1').data('clicked', true)) {
+                    $('#ob-1').on('click', function() {
+                    obiPlayer();
+                    $('#ob-1').off('click');
+                    });
+
+                    // Stage 2 defender selected
+                        // Luke selected
+                        if ($('#ls-3').data('clicked', true) && lukeSkywalker.alive && $('#ds-3').data('clicked', false) && $('#dm-3').data('clicked', false)) {
+                            $('#ls-3').on('click', function() {
+                                $('#ds-3').off('click');
+                                $('#dm-3').off('click');
+                                lukeDefender();
+                            });
+                        }
+                        // Darth Sidious selected
+                        if ($('#ds-3').data('clicked', true) && darthSidious.alive && $('#ls-3').data('clicked', false) && $('#dm-3').data('clicked', false)) {
+                            $('#ds-3').on('click', function() {
+                                $('#ls-3').off('click');
+                                $('#dm-3').off('click');
+                                sidiousDefender();
+                            });
+                        }
+                        // Darth Maul selected
+                        if ($('#dm-3').data('clicked', true) && darthMaul.alive && $('#ds-3').data('clicked', false) && $('#ls-3').data('clicked', false)) {
+                            $('#dm-3').on('click', function() {
+                                $('#ds-3').off('click');
+                                $('#ls-3').off('click');
+                                maulDefender();
+                            });
+                        }
+                }
+                
+                    
+                    
+
+        });
+        
     </script>
+
 </body>
 </html>
