@@ -1,5 +1,5 @@
 body {
-    background-image: url("../images/star-sky-background.jpg");
+    background-image: url("../images/star-background.jpg");
     font-family: 'Poller One', cursive;
 }
 hr {
@@ -36,7 +36,7 @@ hr {
     text-align: center;
     margin: 1%;
     padding: 1%;
-    border: solid darkgray 5px;
+    border: solid black 5px;
     color: black;
     background-color: red;
 }
