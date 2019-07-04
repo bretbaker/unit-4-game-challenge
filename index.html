@@ -144,30 +144,33 @@
 
         // declare global objects
         // -----------------------------------------------------
-        let obiWan = {
-            hp: 100,
-            attack: 10,
-            defender: false,
-            alive: true,
-        };
-        let lukeSkywalker = {
-            hp: 100,
-            attack: 10,
-            defender: false,
-            alive: true,
-        };
-        let darthSidious = {
-            hp: 100,
-            attack: 10,
-            defender: false,
-            alive: true,
-        };
-        let darthMaul = {
-            hp: 100,
-            attack: 10,
-            defender: false,
-            alive: true,
-        };
+        
+        let player = {
+            obiWan : {
+                hp: 100,
+                attack: 10,
+                defender: false,
+                alive: true,
+            },
+            lukeSkywalker : {
+                hp: 100,
+                attack: 10,
+                defender: false,
+                alive: true,
+            },
+            darthSidious : {
+                hp: 100,
+                attack: 10,
+                defender: false,
+                alive: true,
+            },
+            darthMaul : {
+                hp: 100,
+                attack: 10,
+                defender: false,
+                alive: true,
+            },
+        }
 
         // declare global functions
         // ---------------------------------------------------------
@@ -189,11 +192,6 @@
             $('#dm-4').hide();
         }
 
-        // rebinds onclick to enemies allowing them to be slected as defenders once the current defender has been defeated
-        let stopOffClick = (event) => {
-            event.stopProp
-        }
-
         // function run if Obi-Wan is selected as player
         let obiPlayer = () => {
             $('#sc-1').hide();
@@ -208,6 +206,62 @@
             $('#ob-3').hide();
         }
 
+        // function run if Luke is selected as player
+        let lukePlayer = () => {
+            $('#sc-1').hide();
+            $('#gr-1').hide();
+            $('#sc-2').show();
+            $('#gr-2').show();
+            $('#ob-2').hide();
+            $('#ds-2').hide();
+            $('#dm-2').hide();
+            $('#sc-3').show();
+            $('#gr-3').show();
+            $('#ls-3').hide();
+        }
+
+        // function run if Sidious is selected as player
+        let sidiousPlayer = () => {
+            $('#sc-1').hide();
+            $('#gr-1').hide();
+            $('#sc-2').show();
+            $('#gr-2').show();
+            $('#ls-2').hide();
+            $('#ob-2').hide();
+            $('#dm-2').hide();
+            $('#sc-3').show();
+            $('#gr-3').show();
+            $('#ds-3').hide();
+        }
+
+        // function run if Maul is selected as player
+        let maulPlayer = () => {
+            $('#sc-1').hide();
+            $('#gr-1').hide();
+            $('#sc-2').show();
+            $('#gr-2').show();
+            $('#ls-2').hide();
+            $('#ds-2').hide();
+            $('#ob-2').hide();
+            $('#sc-3').show();
+            $('#gr-3').show();
+            $('#dm-3').hide();
+        }
+
+        // function run if Obi-Wan is selected as defender
+        let obiDefender = () => {
+            $('#ob-3').hide();
+            $('#sc-4').show();
+            $('#gr-4').show();
+            $('#sc-5').show();
+            $('#gr-5').show();
+            $('#ob-4').show();
+            player.obiWan.defender = true;
+            console.log(player.obiWan.defender);
+            console.log(player.obiWan.alive);
+            console.log(player.obiWan.hp);
+        }
+
         // function run if Luke is selected as defender
         let lukeDefender = () => {
             $('#ls-3').hide();
@@ -216,10 +270,10 @@
             $('#sc-5').show();
             $('#gr-5').show();
             $('#ls-4').show();
-            lukeSkywalker.defender = true;
-            console.log(lukeSkywalker.defender);
-            console.log(lukeSkywalker.alive);
-            console.log(lukeSkywalker.hp);
+            player.lukeSkywalker.defender = true;
+            console.log(player.lukeSkywalker.defender);
+            console.log(player.lukeSkywalker.alive);
+            console.log(player.lukeSkywalker.hp);
         }
 
         // function run if Darth Sidious is selected as defender
@@ -230,10 +284,10 @@
             $('#sc-5').show();
             $('#gr-5').show();
             $('#ds-4').show();
-            darthSidious.defender = true;
-            console.log(darthSidious.defender);
-            console.log(darthSidious.alive);
-            console.log(darthSidious.hp);
+            player.darthSidious.defender = true;
+            console.log(player.darthSidious.defender);
+            console.log(player.darthSidious.alive);
+            console.log(player.darthSidious.hp);
         }
 
         // function run if Darth Maul is selected as defender
@@ -244,37 +298,46 @@
             $('#sc-5').show();
             $('#gr-5').show();
             $('#dm-4').show();
-            darthMaul.defender = true;
-            console.log(darthMaul.defender);
-            console.log(darthMaul.alive);
-            console.log(darthMaul.hp);
+            player.darthMaul.defender = true;
+            console.log(player.darthMaul.defender);
+            console.log(player.darthMaul.alive);
+            console.log(player.darthMaul.hp);
         }
 
+        // function run if Obi-Wan dies
+        let obiDied = () => {
+            player.obiWan.defender = false;
+            player.obiWan.alive = false;
+            console.log(player.obiWan.defender);
+            console.log(player.obiWan.alive);
+            $('#ob-4').hide();
+        }
+        
         // function run if Luke dies
         let lukeDied = () => {
-            lukeSkywalker.defender = false;
-            lukeSkywalker.alive = false;
-            console.log(lukeSkywalker.defender);
-            console.log(lukeSkywalker.alive);
+            player.lukeSkywalker.defender = false;
+            player.lukeSkywalker.alive = false;
+            console.log(player.lukeSkywalker.defender);
+            console.log(player.lukeSkywalker.alive);
             $('#ls-4').hide();
         }
 
         // function run if Darth Sidious dies
         let sidiousDied = () => {
-            darthSidious.defender = false;
-            darthSidious.alive = false;
-            console.log(darthSidious.defender);
-            console.log(darthSidious.alive);
+            player.darthSidious.defender = false;
+            player.darthSidious.alive = false;
+            console.log(player.darthSidious.defender);
+            console.log(player.darthSidious.alive);
             $('#ds-4').hide();
 
         }
 
         // function run if Darth Sidious dies
         let maulDied = () => {
-            darthMaul.defender = false;
-            darthMaul.alive = false;
-            console.log(darthMaul.defender);
-            console.log(darthMaul.alive);
+            player.darthMaul.defender = false;
+            player.darthMaul.alive = false;
+            console.log(player.darthMaul.defender);
+            console.log(player.darthMaul.alive);
             $('#dm-4').hide();
         }
 
@@ -287,64 +350,166 @@
         $(document).ready(function() {
             
             start();
-
-            // Game played as Obi-Wan Kenobi
-                
-                if ($('#ob-1').data('clicked', true)) {
                     
-                    // Stage 1: Obi-Wan Kenobi selected as Player
-                    $('#ob-1').on('click', function() {
-                    obiPlayer();
-                    });
+            // Stage 1: Select Player
+            $('#ob-1').on('click', function() {
+            obiPlayer();
+            });
+            $('#ls-1').on('click', function() {
+            lukePlayer();
+            });
+            $('#ds-1').on('click', function() {
+            sidiousPlayer();
+            });
+            $('#dm-1').on('click', function() {
+            maulPlayer();
+            });
 
-                    // Stage 2: defender(s) selected
-                    $('#ls-3').on('click', function() {
-                        lukeDefender();                              
-                    });    
-                    $('#ds-3').on('click', function() {
-                        sidiousDefender();
-                    });    
-                    $('#dm-3').on('click', function() {
-                        maulDefender();
-                    });    
+            // Stage 2: defender(s) selected
+            $('#ob-3').on('click', function() {
+                obiDefender();                              
+            });
+            $('#ls-3').on('click', function() {
+                lukeDefender();                              
+            });    
+            $('#ds-3').on('click', function() {
+                sidiousDefender();
+            });    
+            $('#dm-3').on('click', function() {
+                maulDefender();
+            });    
 
-                    // Stage 3: first defender is fought
+            // Stage 3: defender is fought according to whichever player has been selected
+                // Obi-Wan as Player
+                if ($('#ob-1').data('clicked', true)) {
                     $('#attack-button').on('click', function() {
                         // Luke attacked
-                        if (lukeSkywalker.defender && lukeSkywalker.hp > 0) {
-                                lukeSkywalker.hp -= obiWan.attack;
-                                obiWan.attack += 10;
-                                console.log(lukeSkywalker.hp);
-                            if (lukeSkywalker.hp <= 0) {
+                        if (player.lukeSkywalker.defender && player.lukeSkywalker.hp > 0) {
+                                player.lukeSkywalker.hp -= player.obiWan.attack;
+                                player.obiWan.attack += 10;
+                                console.log(player.lukeSkywalker.hp);
+                            if (player.lukeSkywalker.hp <= 0) {
                                 lukeDied();
                             }
                         } 
                         // Darth Sidious attacked
-                        if (darthSidious.defender && darthSidious.hp > 0) {
-                                darthSidious.hp -= obiWan.attack;
-                                obiWan.attack += 10;
-                                console.log(darthSidious.hp);
-                            if (darthSidious.hp <= 0) {
+                        if (player.darthSidious.defender && player.darthSidious.hp > 0) {
+                                player.darthSidious.hp -= player.obiWan.attack;
+                                player.obiWan.attack += 10;
+                                console.log(player.darthSidious.hp);
+                            if (player.darthSidious.hp <= 0) {
                                 sidiousDied();
                             }
                         } 
                         // Darth Maul attacked
-                        if (darthMaul.defender && darthMaul.hp > 0) {
-                                darthMaul.hp -= obiWan.attack;
-                                obiWan.attack += 10;
-                                console.log(darthMaul.hp);
-                            if (darthMaul.hp <= 0) {
+                        if (player.darthMaul.defender && player.darthMaul.hp > 0) {
+                                player.darthMaul.hp -= player.obiWan.attack;
+                                player.obiWan.attack += 10;
+                                console.log(player.darthMaul.hp);
+                            if (player.darthMaul.hp <= 0) {
                                 maulDied();
                             }
                         } 
                     });
-
-                    
+                }             
+                // Luke as Player
+                if ($('#ls-1').data('clicked', true)) {
+                    $('#attack-button').on('click', function() {
+                        // Obi-Wan attacked
+                        if (player.obiWan.defender && player.obiWan.hp > 0) {
+                                player.obiWan.hp -= player.lukeSkywalker.attack;
+                                player.lukeSkywalker.attack += 10;
+                                console.log(player.obiWan.hp);
+                            if (player.obiWan.hp <= 0) {
+                                obiDied();
+                            }
+                        } 
+                        // Darth Sidious attacked
+                        if (player.darthSidious.defender && player.darthSidious.hp > 0) {
+                                player.darthSidious.hp -= player.lukeSkywalker.attack;
+                                player.lukeSkywalker.attack += 10;
+                                console.log(player.darthSidious.hp);
+                            if (player.darthSidious.hp <= 0) {
+                                sidiousDied();
+                            }
+                        } 
+                        // Darth Maul attacked
+                        if (player.darthMaul.defender && player.darthMaul.hp > 0) {
+                                player.darthMaul.hp -= player.lukeSkywalker.attack;
+                                player.lukeSkywalker.attack += 10;
+                                console.log(player.darthMaul.hp);
+                            if (player.darthMaul.hp <= 0) {
+                                maulDied();
+                            }
+                        } 
+                    });
                 }
-                
-                
-                    
-
+                // Darth Sidious as Player
+                if ($('#ds-1').data('clicked', true)) {
+                    $('#attack-button').on('click', function() {
+                        // Luke attacked
+                        if (player.lukeSkywalker.defender && player.lukeSkywalker.hp > 0) {
+                                player.lukeSkywalker.hp -= player.darthSidious.attack;
+                                player.darthSidious.attack += 10;
+                                console.log(player.lukeSkywalker.hp);
+                            if (player.lukeSkywalker.hp <= 0) {
+                                lukeDied();
+                            }
+                        } 
+                        // Obi-Wan attacked
+                        if (player.obiWan.defender && player.obiWan.hp > 0) {
+                                player.obiWan.hp -= player.darthSidious.attack;
+                                player.darthSidious.attack += 10;
+                                console.log(player.obiWan.hp);
+                            if (player.obiWan.hp <= 0) {
+                                obiDied();
+                            }
+                        } 
+                        // Darth Maul attacked
+                        if (player.darthMaul.defender && player.darthMaul.hp > 0) {
+                                player.darthMaul.hp -= player.darthSidious.attack;
+                                player.darthSidious.attack += 10;
+                                console.log(player.darthMaul.hp);
+                            if (player.darthMaul.hp <= 0) {
+                                maulDied();
+                            }
+                        } 
+                    });
+                }
+                // Darth Maul as Player
+                if ($('#ob-1').data('clicked', true)) {
+                    $('#attack-button').on('click', function() {
+                        // Luke attacked
+                        if (player.lukeSkywalker.defender && player.lukeSkywalker.hp > 0) {
+                                player.lukeSkywalker.hp -= player.darthMaul.attack;
+                                player.darthMaul.attack += 10;
+                                console.log(player.lukeSkywalker.hp);
+                            if (player.lukeSkywalker.hp <= 0) {
+                                lukeDied();
+                            }
+                        } 
+                        // Darth Sidious attacked
+                        if (player.darthSidious.defender && player.darthSidious.hp > 0) {
+                                player.darthSidious.hp -= player.darthMaul.attack;
+                                player.darthMaul.attack += 10;
+                                console.log(player.darthSidious.hp);
+                            if (player.darthSidious.hp <= 0) {
+                                sidiousDied();
+                            }
+                        } 
+                        // Obi-Wan attacked
+                        if (player.obiWan.defender && player.obiWan.hp > 0) {
+                                player.obiWan.hp -= player.darthMaul.attack;
+                                player.darthMaul.attack += 10;
+                                console.log(player.obiWan.hp);
+                            if (player.obiWan.hp <= 0) {
+                                obiDied();
+                            }
+                        } 
+                    });
+                }
+        
+        
         });
 
         
