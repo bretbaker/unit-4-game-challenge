@@ -6,27 +6,35 @@ body {
 hr {
     width: 50%;
 }
+button {
+    border-radius: 5px;
+    font-size: 1.5rem;
+    margin: 1% auto;
+}
+button:hover {
+    cursor: pointer;
+}
 .game-title {
     color: white;
-    font-size: 3rem;
+    font-size: 2.5rem;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1% auto;
+    margin: 0.5% auto;
 }
 
 /* Classes */
 .section-title {
     color: white;
-    font-size: 2rem;
+    font-size: 1.5rem;
     height: 100%;
     width: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 1% auto;
+    margin: 0.5% auto;
 }
 .game-row {
     height: 100%;
@@ -36,10 +44,9 @@ hr {
     justify-content: center;
 }
 .char-block-select {
-    font-size: 1.25rem;
     text-align: center;
-    margin: 1%;
-    padding: 1%;
+    margin: 0.5% 1%;
+    padding: 0.5%;
     border: solid green 5px;
     color: black;
     background-color: white;
@@ -48,10 +55,9 @@ hr {
     cursor: pointer;
 }
 .char-block-enemy {
-    font-size: 1.25rem;
     text-align: center;
-    margin: 1%;
-    padding: 1%;
+    margin: 0.5% 1%;
+    padding: 0.5%;
     border: solid black 5px;
     color: black;
     background-color: red;
@@ -60,31 +66,32 @@ hr {
     cursor: pointer;
 }
 .char-block-defender {
-    font-size: 1.25rem;
     text-align: center;
-    margin: 1%;
-    padding: 1%;
+    margin: 0.5% 1%;
+    padding: 0.5%;
     border: solid green 5px;
     color: white;
     background-color: black;
 }
 .char-img-select {
-    width: 200px;
+    width: 175px;
     height: auto;
     border: solid 1px black;
 }
 .char-img-defender {
-    width: 200px;
+    width: 175px;
     height: auto;
     border: solid 1px white;
 }
-
-/* IDs */
-#attack-button {
+.message {
+    color: white;
     font-size: 1.5rem;
 }
-#attack-button:hover {
-    cursor: pointer;
+
+/* IDs */
+#gr-6 {
+    line-height: 2.5rem;
+    text-align: center;
 }
 #restart-button {
     font-size: 1.5rem;

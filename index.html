@@ -23,7 +23,7 @@
         <div id="ob-1" class="char-block-select">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>100</p>
+            <p>120</p>
         </div>
         <div id="ls-1" class="char-block-select">
             <p>Luke Skywalker</p>
@@ -33,12 +33,12 @@
         <div id="ds-1" class="char-block-select">
             <p>Darth Sidious</p>
             <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>100</p>
+            <p>130</p>
         </div>
         <div id="dm-1" class="char-block-select">
             <p>Darth Maul</p>
             <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>100</p>
+            <p>110</p>
         </div>
     </div>
     <!-- Display Selected Character -->
@@ -49,22 +49,22 @@
         <div id="ob-2" class="char-block-select">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>100</p>
+            <p id="ob-player-hp">120</p>
         </div>
         <div id="ls-2" class="char-block-select">
             <p>Luke Skywalker</p>
             <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p>100</p>
+            <p id="ls-player-hp">100</p>
         </div>
         <div id="ds-2" class="char-block-select">
             <p>Darth Sidious</p>
             <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>100</p>
+            <p id="ds-player-hp">130</p>
         </div>
         <div id="dm-2" class="char-block-select">
             <p>Darth Maul</p>
             <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>100</p>
+            <p id="dm-player-hp">110</p>
         </div>
     </div>
     <!-- Display Enemies Available for Attack -->
@@ -75,7 +75,7 @@
         <div id="ob-3" class="char-block-enemy">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>100</p>
+            <p>120</p>
         </div>
         <div id="ls-3" class="char-block-enemy">
             <p>Luke Skywalker</p>
@@ -85,12 +85,12 @@
         <div id="ds-3" class="char-block-enemy">
             <p>Darth Sidious</p>
             <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>100</p>
+            <p>130</p>
         </div>
         <div id="dm-3" class="char-block-enemy">
             <p>Darth Maul</p>
             <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>100</p>
+            <p>110</p>
         </div>
     </div>
     <!-- Display Game Section with Attack Button -->
@@ -108,7 +108,7 @@
         <div id="ob-4" class="char-block-defender">
             <p>Obi-Wan Kenobi</p>
             <img class="char-img-defender" src="assets/images/obi-wan-kenobi.png">
-            <p id="ob-defender-hp">100</p>
+            <p id="ob-defender-hp">120</p>
         </div>
         <div id="ls-4" class="char-block-defender">
             <p>Luke Skywalker</p>
@@ -118,18 +118,24 @@
         <div id="ds-4" class="char-block-defender">
             <p>Darth Sidious</p>
             <img class="char-img-defender" src="assets/images/darth-sidious.jpg">
-            <p id="ds-defender-hp">100</p>
+            <p id="ds-defender-hp">130</p>
         </div>
         <div id="dm-4" class="char-block-defender">
             <p>Darth Maul</p>
             <img class="char-img-defender" src="assets/images/darth-maul.jpg">
-            <p id="dm-defender-hp">100</p>
+            <p id="dm-defender-hp">110</p>
         </div>
     </div>
     <!-- Display Message Output to User -->
-    <div id="gr-6" class="game-row">
-        <p></p>
-        <p></p>
+    <div id="gr-6">
+        <p id="message-1" class="message"></p>
+        <p id="message-2" class="message"></p>
+        <p id="message-3" class="message"></p>
+        <p id="message-4" class="message"></p>
+        <p id="message-5" class="message"></p>
+        <p id="message-6" class="message"></p>
+        <p id="message-7" class="message"></p>
+        <p id="message-8" class="message"></p>
         <button id="restart-button" type="button">Restart</button>
     </div>
 
@@ -186,12 +192,19 @@
         let defenderHP2 = player[2].hp;
         let defenderAttack3 = player[3].attack;
         let defenderHP3 = player[3].hp;
+        let playerHPhtml;
 
         // declare global functions
         // ---------------------------------------------------------
 
         // first function run when page initially loads
         let start = () => {
+            $('#sc-1').show();
+            $('#gr-1').show();
+            $('#ob-1').show();
+            $('#ls-1').show();
+            $('#ds-1').show();
+            $('#dm-1').show();
             $('#sc-2').hide();
             $('#sc-3').hide();
             $('#sc-4').hide();
@@ -200,11 +213,23 @@
             $('#gr-3').hide();
             $('#gr-4').hide();
             $('#gr-5').hide();
-            $('#gr-6').hide();
+            $('#restart-button').hide();
             $('#ob-4').hide();
             $('#ls-4').hide();
             $('#ds-4').hide();
             $('#dm-4').hide();
+        }
+
+        // text clear function
+        let textClear = () => {
+            $('#message-1').html('');
+            $('#message-2').html('');
+            $('#message-3').html('');
+            $('#message-4').html('');
+            $('#message-5').html('');
+            $('#message-6').html('');
+            $('#message-7').html('');
+            $('#message-8').html('');
         }
 
         // function run if Obi-Wan is selected as player
@@ -221,10 +246,14 @@
             $('#ob-3').hide();
             defenderAttack0 = null;
             defenderHP0 = null;
+            playerHPhtml = '#ob-player-hp';
             playerAttack = player[0].attack;
             playerHP = player[0].hp;
             console.log("playerAttack: " + playerAttack);
             console.log("playerHP: " + playerHP);
+            textClear();
+            $('#message-1').html('You select to play as Obi-Wan Kenobi!');
+            $('#message-2').html('Good luck!');
         }
 
         // function run if Luke is selected as player
@@ -241,10 +270,14 @@
             $('#ls-3').hide();
             defenderAttack1 = null;
             defenderHP1 = null;
+            playerHPhtml = '#ls-player-hp';
             playerAttack = player[1].attack;
             playerHP = player[1].hp;
             console.log("playerAttack: " + playerAttack);
             console.log("playerHP: " + playerHP);
+            textClear();
+            $('#message-1').html('You select to play as Luke Skywalker!');
+            $('#message-2').html('Good luck!');
         }
 
         // function run if Sidious is selected as player
@@ -261,10 +294,14 @@
             $('#ds-3').hide();
             defenderAttack2 = null;
             defenderHP2 = null;
+            playerHPhtml = '#ds-player-hp';
             playerAttack = player[2].attack;
             playerHP = player[2].hp;
             console.log("playerAttack: " + playerAttack);
             console.log("playerHP: " + playerHP);
+            textClear();
+            $('#message-1').html('You select to play as Darth Sidious!');
+            $('#message-2').html('Good luck!');
         }
 
         // function run if Maul is selected as player
@@ -281,10 +318,14 @@
             $('#dm-3').hide();
             defenderAttack3 = null;
             defenderHP3 = null;
-            playerAttack = player[3].attack;
+            player[3].status = true;
+            playerHPhtml = '#dm-player-hp';
             playerHP = player[3].hp;
             console.log("playerAttack: " + playerAttack);
             console.log("playerHP: " + playerHP);
+            textClear();
+            $('#message-1').html('You select to play as Darth Maul!');
+            $('#message-2').html('Good luck!');
         }
 
         // function run if Obi-Wan is selected as defender
@@ -298,6 +339,9 @@
             player[0].defender = true;
             console.log("defenderAttack0: " + defenderAttack0);
             console.log("defenderHP0: " + defenderHP0);
+            textClear();
+            $('#message-1').html('You select to fight Obi-Wan Kenobi!');
+            $('#message-2').html('Click button to attack!');
         }
 
         // function run if Luke is selected as defender
@@ -311,6 +355,9 @@
             player[1].defender = true;
             console.log("defenderAttack1: " + defenderAttack1);
             console.log("defenderHP1: " + defenderHP1);
+            textClear();
+            $('#message-1').html('You select to fight Luke Skywalker!');
+            $('#message-2').html('Click button to attack!');
         }
 
         // function run if Darth Sidious is selected as defender
@@ -324,6 +371,9 @@
             player[2].defender = true;
             console.log("defenderAttack2: " + defenderAttack2);
             console.log("defenderHP2: " + defenderHP2);
+            textClear();
+            $('#message-1').html('You select to fight Darth Sidious!');
+            $('#message-2').html('Click button to attack!');
         }
 
         // function run if Darth Maul is selected as defender
@@ -337,6 +387,9 @@
             player[3].defender = true;
             console.log("defenderAttack3: " + defenderAttack3);
             console.log("defenderHP3: " + defenderHP3);
+            textClear();
+            $('#message-1').html('You select to fight Darth Maul!');
+            $('#message-2').html('Click button to attack!');
         }
 
         // function run if Obi-Wan dies
@@ -344,6 +397,9 @@
             player[0].defender = false;
             player[0].alive = false;
             $('#ob-4').hide();
+            $('#message-2').html('You defeated Obi-Wan Kenobi!');
+            playerHP = playerHP + defenderAttack0;
+            $(playerHPhtml).html(playerHP);
         }
         
         // function run if Luke dies
@@ -351,6 +407,9 @@
             player[1].defender = false;
             player[1].alive = false;
             $('#ls-4').hide();
+            $('#message-4').html('You defeated Luke Skywalker!');
+            playerHP = playerHP + defenderAttack1;
+            $(playerHPhtml).html(playerHP);
         }
 
         // function run if Darth Sidious dies
@@ -358,7 +417,9 @@
             player[2].defender = false;
             player[2].alive = false;
             $('#ds-4').hide();
-
+            $('#message-6').html('You defeated Darth Sidious!');
+            playerHP = playerHP + defenderAttack2;
+            $(playerHPhtml).html(playerHP);
         }
 
         // function run if Darth Sidious dies
@@ -366,6 +427,81 @@
             player[3].defender = false;
             player[3].alive = false;
             $('#dm-4').hide();
+            $('#message-8').html('You defeated Darth Maul!');
+            playerHP = playerHP + defenderAttack3;
+            $(playerHPhtml).html(playerHP);
+        }
+
+        // function run if player is defeated
+        let playerDefeat = () => {
+            $('#sc-2').hide();
+            $('#gr-2').hide();
+            $('#sc-3').hide();
+            $('#gr-3').hide();
+            $('#sc-4').hide();
+            $('#gr-4').hide();
+            $('#restart-button').show();
+            textClear();
+            $('#message-1').html('You have been defeated!');
+            $('#message-2').html('Click button to try again!');
+        }
+
+        // function run if player wins
+        let winGame = () => {
+            $('#sc-3').hide();
+            $('#gr-3').hide();
+            $('#sc-4').hide();
+            $('#gr-4').hide();
+            $('#sc-5').hide();
+            $('#gr-5').hide();
+            $('#restart-button').show();
+            textClear();
+            $('#message-1').html('You win! You are a master of the Force!');
+            $('#message-2').html('Click button to play again!');
+        }
+
+        // function run if game ends and user clicks restart button to play again
+        let restartGame = () => {
+            start();
+            textClear();
+            player = [
+                {
+                    name: "Obi-Wan Kenobi",
+                    hp: 120,
+                    attack: 15,
+                    defender: false,
+                    alive: true,
+                },
+                {
+                    name: "Luke Skywalker",
+                    hp: 100,
+                    attack: 5,
+                    defender: false,
+                    alive: true,
+                },
+                {
+                    name: "Darth Sidious",
+                    hp: 130,
+                    attack: 20,
+                    defender: false,
+                    alive: true,
+                },
+                {
+                    name: "Darth Maul",
+                    hp: 110,
+                    attack: 10,
+                    defender: false,
+                    alive: true,
+                }
+            ];
+            defenderAttack0 = player[0].attack;
+            defenderHP0 = player[0].hp;
+            defenderAttack1 = player[1].attack;
+            defenderHP1 = player[1].hp;
+            defenderAttack2 = player[2].attack;
+            defenderHP2 = player[2].hp;
+            defenderAttack3 = player[3].attack;
+            defenderHP3 = player[3].hp;
         }
 
         // -------------------------------------------------------------
@@ -408,17 +544,29 @@
 
             // Stage 3: defender(s) fought according to whichever player/defender(s) selected
             $('#attack-button').on('click', function() {
+                textClear();
                 // Obi-Wan attacked
                 if (player[0].defender && defenderHP0 > 0) {
                         defenderHP0 = defenderHP0 - playerAttack;
                         console.log("playerAttack: " + playerAttack);
                         console.log("defenderHP0: " + defenderHP0);
+                        $('#ob-defender-hp').html(defenderHP0);
+                        $('#message-1').html('You attacked Obi-Wan Kenobi for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack0;
                         console.log("defenderAttack0: " + defenderAttack0);
                         console.log("playerHP: " + playerHP);
+                        $(playerHPhtml).html(playerHP);
+                        $('#message-2').html('Obi-Wan Kenobi attacked you back for ' + defenderAttack0 + ' damage!');
                         playerAttack += 10;
                     if (defenderHP0 <= 0) {
                         obiDied();
+                    }
+                    if (playerHP <= 0) {
+                        playerDefeat();
+                    }
+                    // Win condition
+                    if (player[0].alive === false && player[1].alive === false && player[2].alive === false || player[0].alive === false && player[1].alive === false && player[3].alive === false || player[0].alive === false && player[2].alive === false && player[3].alive === false || player[1].alive === false && player[2].alive === false && player[3].alive === false) {
+                        winGame();
                     }
                 }
                 // Luke attacked
@@ -426,12 +574,23 @@
                         defenderHP1 = defenderHP1 - playerAttack;
                         console.log("playerAttack: " + playerAttack);
                         console.log("defenderHP1: " + defenderHP1);
+                        $('#ls-defender-hp').html(defenderHP1);
+                        $('#message-3').html('You attacked Luke Skywalker for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack1;
                         console.log("defenderAttack1: " + defenderAttack1);
                         console.log("playerHP: " + playerHP);
+                        $(playerHPhtml).html(playerHP);
+                        $('#message-4').html('Luke Skywalker attacked you back for ' + defenderAttack1 + ' damage!');
                         playerAttack += 10;
                     if (defenderHP1 <= 0) {
                         lukeDied();
+                    }
+                    if (playerHP <= 0) {
+                        playerDefeat();
+                    }
+                    // Win condition
+                    if (player[0].alive === false && player[1].alive === false && player[2].alive === false || player[0].alive === false && player[1].alive === false && player[3].alive === false || player[0].alive === false && player[2].alive === false && player[3].alive === false || player[1].alive === false && player[2].alive === false && player[3].alive === false) {
+                        winGame();
                     }
                 } 
                 // Darth Sidious attacked
@@ -439,12 +598,23 @@
                         defenderHP2 = defenderHP2 - playerAttack;
                         console.log("playerAttack: " + playerAttack);
                         console.log("defenderHP2: " + defenderHP2);
+                        $('#ds-defender-hp').html(defenderHP2);
+                        $('#message-5').html('You attacked Darth Sidious for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack2;
                         console.log("defenderAttack2: " + defenderAttack2);
                         console.log("playerHP: " + playerHP);
+                        $(playerHPhtml).html(playerHP);
+                        $('#message-6').html('Darth Sidious attacked you back for ' + defenderAttack2 + ' damage!');
                         playerAttack += 10;
                     if (defenderHP2 <= 0) {
                         sidiousDied();
+                    }
+                    if (playerHP <= 0) {
+                        playerDefeat();
+                    }
+                    // Win condition
+                    if (player[0].alive === false && player[1].alive === false && player[2].alive === false || player[0].alive === false && player[1].alive === false && player[3].alive === false || player[0].alive === false && player[2].alive === false && player[3].alive === false || player[1].alive === false && player[2].alive === false && player[3].alive === false) {
+                        winGame();
                     }
                 } 
                 // Darth Maul attacked
@@ -452,16 +622,32 @@
                         defenderHP3 = defenderHP3 - playerAttack;
                         console.log("playerAttack: " + playerAttack);
                         console.log("defenderHP3: " + defenderHP3);
+                        $('#dm-defender-hp').html(defenderHP3);
+                        $('#message-7').html('You attacked Darth Maul for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack3;
                         console.log("defenderAttack3: " + defenderAttack3);
                         console.log("playerHP: " + playerHP);
+                        $(playerHPhtml).html(playerHP);
+                        $('#message-8').html('Darth Maul attacked you back for ' + defenderAttack3 + ' damage!');
                         playerAttack += 10;
                     if (defenderHP3 <= 0) {
                         maulDied();
                     }
+                    if (playerHP <= 0) {
+                        playerDefeat();
+                    }
+                    // Win condition
+                    if (player[0].alive === false && player[1].alive === false && player[2].alive === false || player[0].alive === false && player[1].alive === false && player[3].alive === false || player[0].alive === false && player[2].alive === false && player[3].alive === false || player[1].alive === false && player[2].alive === false && player[3].alive === false) {
+                        winGame();
+                    }
                 }
             });        
-        
+            
+            // Stage 4: game over
+            $('#restart-button').on('click', function() {
+                restartGame();
+            });
+
         });
 
         
