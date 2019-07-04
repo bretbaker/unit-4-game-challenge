@@ -102,7 +102,7 @@
     </div>
     <!-- Display Current Defender -->
     <div id="sc-5" class="section-title">
-        <h2>Defender</h2>
+        <h2>Defender(s)</h2>
     </div>
     <div id="gr-5" class="game-row">
         <div id="ob-4" class="char-block-defender">
@@ -183,33 +183,39 @@
             $('#gr-4').hide();
             $('#gr-5').hide();
             $('#gr-6').hide();
+            $('#ob-4').hide();
+            $('#ls-4').hide();
+            $('#ds-4').hide();
+            $('#dm-4').hide();
+        }
+
+        // rebinds onclick to enemies allowing them to be slected as defenders once the current defender has been defeated
+        let stopOffClick = (event) => {
+            event.stopProp
         }
 
         // function run if Obi-Wan is selected as player
         let obiPlayer = () => {
-            $('#sc-1').slideUp();
-            $('#gr-1').slideUp();
-            $('#sc-2').slideDown();
-            $('#gr-2').slideDown();
-            $('#ls-2').fadeOut();
-            $('#ds-2').fadeOut();
-            $('#dm-2').fadeOut();
-            $('#sc-3').slideDown();
-            $('#gr-3').slideDown();
-            $('#ob-3').fadeOut();
+            $('#sc-1').hide();
+            $('#gr-1').hide();
+            $('#sc-2').show();
+            $('#gr-2').show();
+            $('#ls-2').hide();
+            $('#ds-2').hide();
+            $('#dm-2').hide();
+            $('#sc-3').show();
+            $('#gr-3').show();
+            $('#ob-3').hide();
         }
 
         // function run if Luke is selected as defender
         let lukeDefender = () => {
-            $('#ls-3').fadeOut();
-            $('#sc-4').slideDown();
-            $('#gr-4').slideDown();
-            $('#sc-5').slideDown();
-            $('#gr-5').slideDown();
-            $('#ob-4').hide();
-            $('#ds-4').hide();
-            $('#dm-4').hide();
-            $('#ls-4').fadeIn();
+            $('#ls-3').hide();
+            $('#sc-4').show();
+            $('#gr-4').show();
+            $('#sc-5').show();
+            $('#gr-5').show();
+            $('#ls-4').show();
             lukeSkywalker.defender = true;
             console.log(lukeSkywalker.defender);
             console.log(lukeSkywalker.alive);
@@ -218,15 +224,12 @@
 
         // function run if Darth Sidious is selected as defender
         let sidiousDefender = () => {
-            $('#ds-3').fadeOut();
-            $('#sc-4').slideDown();
-            $('#gr-4').slideDown();
-            $('#sc-5').slideDown();
-            $('#gr-5').slideDown();
-            $('#ob-4').hide();
-            $('#ls-4').hide();
-            $('#dm-4').hide();
-            $('#ds-4').fadeIn();
+            $('#ds-3').hide();
+            $('#sc-4').show();
+            $('#gr-4').show();
+            $('#sc-5').show();
+            $('#gr-5').show();
+            $('#ds-4').show();
             darthSidious.defender = true;
             console.log(darthSidious.defender);
             console.log(darthSidious.alive);
@@ -235,15 +238,12 @@
 
         // function run if Darth Maul is selected as defender
         let maulDefender = () => {
-            $('#dm-3').fadeOut();
-            $('#sc-4').slideDown();
-            $('#gr-4').slideDown();
-            $('#sc-5').slideDown();
-            $('#gr-5').slideDown();
-            $('#ob-4').hide();
-            $('#ls-4').hide();
-            $('#ds-4').hide();
-            $('#dm-4').fadeIn();
+            $('#dm-3').hide();
+            $('#sc-4').show();
+            $('#gr-4').show();
+            $('#sc-5').show();
+            $('#gr-5').show();
+            $('#dm-4').show();
             darthMaul.defender = true;
             console.log(darthMaul.defender);
             console.log(darthMaul.alive);
@@ -256,9 +256,7 @@
             lukeSkywalker.alive = false;
             console.log(lukeSkywalker.defender);
             console.log(lukeSkywalker.alive);
-            $('#ls-4').fadeOut();
-            $('#ds-3').bind('click');
-            $('#dm-3').bind('click');
+            $('#ls-4').hide();
         }
 
         // function run if Darth Sidious dies
@@ -267,9 +265,8 @@
             darthSidious.alive = false;
             console.log(darthSidious.defender);
             console.log(darthSidious.alive);
-            $('#ds-4').fadeOut();
-            $('#ls-3').bind('click');
-            $('#dm-3').bind('click');
+            $('#ds-4').hide();
+
         }
 
         // function run if Darth Sidious dies
@@ -278,9 +275,7 @@
             darthMaul.alive = false;
             console.log(darthMaul.defender);
             console.log(darthMaul.alive);
-            $('#dm-4').fadeOut();
-            $('#ds-3').bind('click');
-            $('#ls-3').bind('click');
+            $('#dm-4').hide();
         }
 
         // -------------------------------------------------------------
@@ -288,7 +283,7 @@
         // start jquery global function
         // -------------------------------------------------------------
         // -------------------------------------------------------------
-
+        
         $(document).ready(function() {
             
             start();
@@ -297,39 +292,23 @@
                 
                 if ($('#ob-1').data('clicked', true)) {
                     
-                    // Stage 1 Obi-Wan Kenobi selected as Player
+                    // Stage 1: Obi-Wan Kenobi selected as Player
                     $('#ob-1').on('click', function() {
                     obiPlayer();
-                    $('#ob-1').unbind('click');
                     });
 
-                    // Stage 2 defender selected
-                        // Luke selected
-                        if ($('#ls-3').data('clicked', true) && lukeSkywalker.alive && $('#ds-3').data('clicked', false) && $('#dm-3').data('clicked', false)) {
-                            $('#ls-3').on('click', function() {
-                                $('#ds-3').unbind('click');
-                                $('#dm-3').unbind('click');
-                                lukeDefender();
-                            });
-                        }
-                        // Darth Sidious selected
-                        if ($('#ds-3').data('clicked', true) && darthSidious.alive && $('#ls-3').data('clicked', false) && $('#dm-3').data('clicked', false)) {
-                            $('#ds-3').on('click', function() {
-                                $('#ls-3').unbind('click');
-                                $('#dm-3').unbind('click');
-                                sidiousDefender();
-                            });
-                        }
-                        // Darth Maul selected
-                        if ($('#dm-3').data('clicked', true) && darthMaul.alive && $('#ds-3').data('clicked', false) && $('#ls-3').data('clicked', false)) {
-                            $('#dm-3').on('click', function() {
-                                $('#ds-3').unbind('click');
-                                $('#ls-3').unbind('click');
-                                maulDefender();
-                            });
-                        }
+                    // Stage 2: defender(s) selected
+                    $('#ls-3').on('click', function() {
+                        lukeDefender();                              
+                    });    
+                    $('#ds-3').on('click', function() {
+                        sidiousDefender();
+                    });    
+                    $('#dm-3').on('click', function() {
+                        maulDefender();
+                    });    
 
-                    // Stage 3 defender is attacked
+                    // Stage 3: first defender is fought
                     $('#attack-button').on('click', function() {
                         // Luke attacked
                         if (lukeSkywalker.defender && lukeSkywalker.hp > 0) {
@@ -359,6 +338,7 @@
                             }
                         } 
                     });
+
                     
                 }
                 
