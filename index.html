@@ -199,12 +199,12 @@
 
         // first function run when page initially loads
         let start = () => {
-            $('#sc-1').show();
-            $('#gr-1').show();
-            $('#ob-1').show();
-            $('#ls-1').show();
-            $('#ds-1').show();
-            $('#dm-1').show();
+            // $('#sc-1').show();
+            // $('#gr-1').show();
+            // $('#ob-1').show();
+            // $('#ls-1').show();
+            // $('#ds-1').show();
+            // $('#dm-1').show();
             $('#sc-2').hide();
             $('#sc-3').hide();
             $('#sc-4').hide();
@@ -318,8 +318,8 @@
             $('#dm-3').hide();
             defenderAttack3 = null;
             defenderHP3 = null;
-            player[3].status = true;
             playerHPhtml = '#dm-player-hp';
+            playerAttack = player[3].attack;
             playerHP = player[3].hp;
             console.log("playerAttack: " + playerAttack);
             console.log("playerHP: " + playerHP);
@@ -419,7 +419,7 @@
             $('#ds-4').hide();
             $('#message-6').html('You defeated Darth Sidious!');
             playerHP = playerHP + defenderAttack2;
-            $(playerHPhtml).html(playerHP);
+            $(playerHPhtml).html(playerHP);           
         }
 
         // function run if Darth Sidious dies
@@ -443,7 +443,7 @@
             $('#restart-button').show();
             textClear();
             $('#message-1').html('You have been defeated!');
-            $('#message-2').html('Click button to try again!');
+            $('#message-2').html('Click restart to try again!');
         }
 
         // function run if player wins
@@ -457,11 +457,12 @@
             $('#restart-button').show();
             textClear();
             $('#message-1').html('You win! You are a master of the Force!');
-            $('#message-2').html('Click button to play again!');
+            $('#message-2').html('Click restart to play again!');
         }
 
         // function run if game ends and user clicks restart button to play again
         let restartGame = () => {
+            $('*').show();
             start();
             textClear();
             player = [
@@ -502,6 +503,10 @@
             defenderHP2 = player[2].hp;
             defenderAttack3 = player[3].attack;
             defenderHP3 = player[3].hp;
+            $('#ob-defender-hp').html(120);
+            $('#ls-defender-hp').html(100);
+            $('#ds-defender-hp').html(130);
+            $('#dm-defender-hp').html(110); 
         }
 
         // -------------------------------------------------------------
