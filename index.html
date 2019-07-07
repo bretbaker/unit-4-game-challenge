@@ -9,133 +9,138 @@
     <link href="assets/css/style.css" rel="stylesheet" type="text/css">
 </head>
 <body>
-    <!-- Main Title -->
-    <div class="game-title">
-        <h1>Star Wars RPG!</h1>
-    </div>
-    <hr>
-    <!-- Character Selector -->
-    <div id="sc-1" class="section-title">
-        <h2>Select Character</h2>
-    </div>
-    <div id="gr-1" class="game-row">
-        <div id="ob-1" class="char-block-select">
-            <p>Obi-Wan Kenobi</p>
-            <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>120</p>
+    <div id="page-container">
+        <div id="content-wrap">
+            <!-- Main Title -->
+            <div class="game-title">
+                <h1>Star Wars RPG!</h1>
+            </div>
+            <hr>
+            <!-- Character Selector -->
+            <div id="sc-1" class="section-title">
+                <h2>Select Character</h2>
+            </div>
+            <div id="gr-1" class="game-row">
+                <div id="ob-1" class="char-block-select">
+                    <p>Obi-Wan Kenobi</p>
+                    <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
+                    <p>120</p>
+                </div>
+                <div id="ls-1" class="char-block-select">
+                    <p>Luke Skywalker</p>
+                    <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
+                    <p>100</p>
+                </div>
+                <div id="ds-1" class="char-block-select">
+                    <p>Darth Sidious</p>
+                    <img class="char-img-select" src="assets/images/darth-sidious.jpg">
+                    <p>130</p>
+                </div>
+                <div id="dm-1" class="char-block-select">
+                    <p>Darth Maul</p>
+                    <img class="char-img-select" src="assets/images/darth-maul.jpg">
+                    <p>110</p>
+                </div>
+            </div>
+            <!-- Display Selected Character -->
+            <div id="sc-2" class="section-title">
+                <h2>Your Character</h2>
+            </div>
+            <div id="gr-2" class="game-row">
+                <div id="ob-2" class="char-block-select">
+                    <p>Obi-Wan Kenobi</p>
+                    <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
+                    <p id="ob-player-hp">120</p>
+                </div>
+                <div id="ls-2" class="char-block-select">
+                    <p>Luke Skywalker</p>
+                    <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
+                    <p id="ls-player-hp">100</p>
+                </div>
+                <div id="ds-2" class="char-block-select">
+                    <p>Darth Sidious</p>
+                    <img class="char-img-select" src="assets/images/darth-sidious.jpg">
+                    <p id="ds-player-hp">130</p>
+                </div>
+                <div id="dm-2" class="char-block-select">
+                    <p>Darth Maul</p>
+                    <img class="char-img-select" src="assets/images/darth-maul.jpg">
+                    <p id="dm-player-hp">110</p>
+                </div>
+            </div>
+            <!-- Display Enemies Available for Attack -->
+            <div id="sc-3" class="section-title">
+                <h2>Enemies Available to Attack</h2>
+            </div>
+            <div id="gr-3" class="game-row">
+                <div id="ob-3" class="char-block-enemy">
+                    <p>Obi-Wan Kenobi</p>
+                    <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
+                    <p>120</p>
+                </div>
+                <div id="ls-3" class="char-block-enemy">
+                    <p>Luke Skywalker</p>
+                    <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
+                    <p>100</p>
+                </div>
+                <div id="ds-3" class="char-block-enemy">
+                    <p>Darth Sidious</p>
+                    <img class="char-img-select" src="assets/images/darth-sidious.jpg">
+                    <p>130</p>
+                </div>
+                <div id="dm-3" class="char-block-enemy">
+                    <p>Darth Maul</p>
+                    <img class="char-img-select" src="assets/images/darth-maul.jpg">
+                    <p>110</p>
+                </div>
+            </div>
+            <!-- Display Game Section with Attack Button -->
+            <div id="sc-4" class="section-title">
+                <h2>Fight Section</h2>
+            </div>
+            <div id="gr-4" class="game-row">
+                <button id="attack-button" type="button">Attack</button>
+            </div>
+            <!-- Display Current Defender -->
+            <div id="sc-5" class="section-title">
+                <h2>Defender(s)</h2>
+            </div>
+            <div id="gr-5" class="game-row">
+                <div id="ob-4" class="char-block-defender">
+                    <p>Obi-Wan Kenobi</p>
+                    <img class="char-img-defender" src="assets/images/obi-wan-kenobi.png">
+                    <p id="ob-defender-hp">120</p>
+                </div>
+                <div id="ls-4" class="char-block-defender">
+                    <p>Luke Skywalker</p>
+                    <img class="char-img-defender" src="assets/images/luke-skywalker.jpg">
+                    <p id="ls-defender-hp">100</p>
+                </div>
+                <div id="ds-4" class="char-block-defender">
+                    <p>Darth Sidious</p>
+                    <img class="char-img-defender" src="assets/images/darth-sidious.jpg">
+                    <p id="ds-defender-hp">130</p>
+                </div>
+                <div id="dm-4" class="char-block-defender">
+                    <p>Darth Maul</p>
+                    <img class="char-img-defender" src="assets/images/darth-maul.jpg">
+                    <p id="dm-defender-hp">110</p>
+                </div>
+            </div>
+            <!-- Display Message Output to User -->
+            <div id="gr-6">
+                <p id="message-1" class="message"></p>
+                <p id="message-2" class="message"></p>
+                <p id="message-3" class="message"></p>
+                <p id="message-4" class="message"></p>
+                <p id="message-5" class="message"></p>
+                <p id="message-6" class="message"></p>
+                <p id="message-7" class="message"></p>
+                <p id="message-8" class="message"></p>
+                <button id="restart-button" type="button">Restart</button>
+            </div>
+            <foot id="footer"><hr>Copyright &copy;</foot>
         </div>
-        <div id="ls-1" class="char-block-select">
-            <p>Luke Skywalker</p>
-            <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p>100</p>
-        </div>
-        <div id="ds-1" class="char-block-select">
-            <p>Darth Sidious</p>
-            <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>130</p>
-        </div>
-        <div id="dm-1" class="char-block-select">
-            <p>Darth Maul</p>
-            <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>110</p>
-        </div>
-    </div>
-    <!-- Display Selected Character -->
-    <div id="sc-2" class="section-title">
-        <h2>Your Character</h2>
-    </div>
-    <div id="gr-2" class="game-row">
-        <div id="ob-2" class="char-block-select">
-            <p>Obi-Wan Kenobi</p>
-            <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p id="ob-player-hp">120</p>
-        </div>
-        <div id="ls-2" class="char-block-select">
-            <p>Luke Skywalker</p>
-            <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p id="ls-player-hp">100</p>
-        </div>
-        <div id="ds-2" class="char-block-select">
-            <p>Darth Sidious</p>
-            <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p id="ds-player-hp">130</p>
-        </div>
-        <div id="dm-2" class="char-block-select">
-            <p>Darth Maul</p>
-            <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p id="dm-player-hp">110</p>
-        </div>
-    </div>
-    <!-- Display Enemies Available for Attack -->
-    <div id="sc-3" class="section-title">
-        <h2>Enemies Available to Attack</h2>
-    </div>
-    <div id="gr-3" class="game-row">
-        <div id="ob-3" class="char-block-enemy">
-            <p>Obi-Wan Kenobi</p>
-            <img class="char-img-select" src="assets/images/obi-wan-kenobi.png">
-            <p>120</p>
-        </div>
-        <div id="ls-3" class="char-block-enemy">
-            <p>Luke Skywalker</p>
-            <img class="char-img-select" src="assets/images/luke-skywalker.jpg">
-            <p>100</p>
-        </div>
-        <div id="ds-3" class="char-block-enemy">
-            <p>Darth Sidious</p>
-            <img class="char-img-select" src="assets/images/darth-sidious.jpg">
-            <p>130</p>
-        </div>
-        <div id="dm-3" class="char-block-enemy">
-            <p>Darth Maul</p>
-            <img class="char-img-select" src="assets/images/darth-maul.jpg">
-            <p>110</p>
-        </div>
-    </div>
-    <!-- Display Game Section with Attack Button -->
-    <div id="sc-4" class="section-title">
-        <h2>Fight Section</h2>
-    </div>
-    <div id="gr-4" class="game-row">
-        <button id="attack-button" type="button">Attack</button>
-    </div>
-    <!-- Display Current Defender -->
-    <div id="sc-5" class="section-title">
-        <h2>Defender(s)</h2>
-    </div>
-    <div id="gr-5" class="game-row">
-        <div id="ob-4" class="char-block-defender">
-            <p>Obi-Wan Kenobi</p>
-            <img class="char-img-defender" src="assets/images/obi-wan-kenobi.png">
-            <p id="ob-defender-hp">120</p>
-        </div>
-        <div id="ls-4" class="char-block-defender">
-            <p>Luke Skywalker</p>
-            <img class="char-img-defender" src="assets/images/luke-skywalker.jpg">
-            <p id="ls-defender-hp">100</p>
-        </div>
-        <div id="ds-4" class="char-block-defender">
-            <p>Darth Sidious</p>
-            <img class="char-img-defender" src="assets/images/darth-sidious.jpg">
-            <p id="ds-defender-hp">130</p>
-        </div>
-        <div id="dm-4" class="char-block-defender">
-            <p>Darth Maul</p>
-            <img class="char-img-defender" src="assets/images/darth-maul.jpg">
-            <p id="dm-defender-hp">110</p>
-        </div>
-    </div>
-    <!-- Display Message Output to User -->
-    <div id="gr-6">
-        <p id="message-1" class="message"></p>
-        <p id="message-2" class="message"></p>
-        <p id="message-3" class="message"></p>
-        <p id="message-4" class="message"></p>
-        <p id="message-5" class="message"></p>
-        <p id="message-6" class="message"></p>
-        <p id="message-7" class="message"></p>
-        <p id="message-8" class="message"></p>
-        <button id="restart-button" type="button">Restart</button>
     </div>
 
     <!-- Add jQuery CDN -->

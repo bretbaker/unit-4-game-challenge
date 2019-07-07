@@ -49,12 +49,6 @@
 
         // first function run when page initially loads
         let start = () => {
-            // $('#sc-1').show();
-            // $('#gr-1').show();
-            // $('#ob-1').show();
-            // $('#ls-1').show();
-            // $('#ds-1').show();
-            // $('#dm-1').show();
             $('#sc-2').hide();
             $('#sc-3').hide();
             $('#sc-4').hide();
@@ -99,8 +93,6 @@
             playerHPhtml = '#ob-player-hp';
             playerAttack = player[0].attack;
             playerHP = player[0].hp;
-            console.log("playerAttack: " + playerAttack);
-            console.log("playerHP: " + playerHP);
             textClear();
             $('#message-1').html('You select to play as Obi-Wan Kenobi!');
             $('#message-2').html('Good luck!');
@@ -123,8 +115,6 @@
             playerHPhtml = '#ls-player-hp';
             playerAttack = player[1].attack;
             playerHP = player[1].hp;
-            console.log("playerAttack: " + playerAttack);
-            console.log("playerHP: " + playerHP);
             textClear();
             $('#message-1').html('You select to play as Luke Skywalker!');
             $('#message-2').html('Good luck!');
@@ -147,8 +137,6 @@
             playerHPhtml = '#ds-player-hp';
             playerAttack = player[2].attack;
             playerHP = player[2].hp;
-            console.log("playerAttack: " + playerAttack);
-            console.log("playerHP: " + playerHP);
             textClear();
             $('#message-1').html('You select to play as Darth Sidious!');
             $('#message-2').html('Good luck!');
@@ -171,8 +159,6 @@
             playerHPhtml = '#dm-player-hp';
             playerAttack = player[3].attack;
             playerHP = player[3].hp;
-            console.log("playerAttack: " + playerAttack);
-            console.log("playerHP: " + playerHP);
             textClear();
             $('#message-1').html('You select to play as Darth Maul!');
             $('#message-2').html('Good luck!');
@@ -187,8 +173,6 @@
             $('#gr-5').show();
             $('#ob-4').show();
             player[0].defender = true;
-            console.log("defenderAttack0: " + defenderAttack0);
-            console.log("defenderHP0: " + defenderHP0);
             textClear();
             $('#message-1').html('You select to fight Obi-Wan Kenobi!');
             $('#message-2').html('Click button to attack!');
@@ -203,8 +187,6 @@
             $('#gr-5').show();
             $('#ls-4').show();
             player[1].defender = true;
-            console.log("defenderAttack1: " + defenderAttack1);
-            console.log("defenderHP1: " + defenderHP1);
             textClear();
             $('#message-1').html('You select to fight Luke Skywalker!');
             $('#message-2').html('Click button to attack!');
@@ -219,8 +201,6 @@
             $('#gr-5').show();
             $('#ds-4').show();
             player[2].defender = true;
-            console.log("defenderAttack2: " + defenderAttack2);
-            console.log("defenderHP2: " + defenderHP2);
             textClear();
             $('#message-1').html('You select to fight Darth Sidious!');
             $('#message-2').html('Click button to attack!');
@@ -235,8 +215,6 @@
             $('#gr-5').show();
             $('#dm-4').show();
             player[3].defender = true;
-            console.log("defenderAttack3: " + defenderAttack3);
-            console.log("defenderHP3: " + defenderHP3);
             textClear();
             $('#message-1').html('You select to fight Darth Maul!');
             $('#message-2').html('Click button to attack!');
@@ -403,13 +381,9 @@
                 // Obi-Wan attacked
                 if (player[0].defender && defenderHP0 > 0) {
                         defenderHP0 = defenderHP0 - playerAttack;
-                        console.log("playerAttack: " + playerAttack);
-                        console.log("defenderHP0: " + defenderHP0);
                         $('#ob-defender-hp').html(defenderHP0);
                         $('#message-1').html('You attacked Obi-Wan Kenobi for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack0;
-                        console.log("defenderAttack0: " + defenderAttack0);
-                        console.log("playerHP: " + playerHP);
                         $(playerHPhtml).html(playerHP);
                         $('#message-2').html('Obi-Wan Kenobi attacked you back for ' + defenderAttack0 + ' damage!');
                         playerAttack += 10;
@@ -427,13 +401,9 @@
                 // Luke attacked
                 if (player[1].defender && defenderHP1 > 0) {
                         defenderHP1 = defenderHP1 - playerAttack;
-                        console.log("playerAttack: " + playerAttack);
-                        console.log("defenderHP1: " + defenderHP1);
                         $('#ls-defender-hp').html(defenderHP1);
                         $('#message-3').html('You attacked Luke Skywalker for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack1;
-                        console.log("defenderAttack1: " + defenderAttack1);
-                        console.log("playerHP: " + playerHP);
                         $(playerHPhtml).html(playerHP);
                         $('#message-4').html('Luke Skywalker attacked you back for ' + defenderAttack1 + ' damage!');
                         playerAttack += 10;
@@ -451,13 +421,9 @@
                 // Darth Sidious attacked
                 if (player[2].defender && defenderHP2 > 0) {
                         defenderHP2 = defenderHP2 - playerAttack;
-                        console.log("playerAttack: " + playerAttack);
-                        console.log("defenderHP2: " + defenderHP2);
                         $('#ds-defender-hp').html(defenderHP2);
                         $('#message-5').html('You attacked Darth Sidious for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack2;
-                        console.log("defenderAttack2: " + defenderAttack2);
-                        console.log("playerHP: " + playerHP);
                         $(playerHPhtml).html(playerHP);
                         $('#message-6').html('Darth Sidious attacked you back for ' + defenderAttack2 + ' damage!');
                         playerAttack += 10;
@@ -475,13 +441,9 @@
                 // Darth Maul attacked
                 if (player[3].defender && defenderHP3 > 0) {
                         defenderHP3 = defenderHP3 - playerAttack;
-                        console.log("playerAttack: " + playerAttack);
-                        console.log("defenderHP3: " + defenderHP3);
                         $('#dm-defender-hp').html(defenderHP3);
                         $('#message-7').html('You attacked Darth Maul for ' + playerAttack + ' damage!');
                         playerHP = playerHP - defenderAttack3;
-                        console.log("defenderAttack3: " + defenderAttack3);
-                        console.log("playerHP: " + playerHP);
                         $(playerHPhtml).html(playerHP);
                         $('#message-8').html('Darth Maul attacked you back for ' + defenderAttack3 + ' damage!');
                         playerAttack += 10;
