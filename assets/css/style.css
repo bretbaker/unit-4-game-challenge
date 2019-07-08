@@ -14,6 +14,7 @@ button {
 button:hover {
     cursor: pointer;
 }
+/* Classes */
 .game-title {
     color: white;
     font-size: 2.5rem;
@@ -24,8 +25,6 @@ button:hover {
     justify-content: center;
     margin: 0.5% auto;
 }
-
-/* Classes */
 .section-title {
     color: white;
     font-size: 1.5rem;
@@ -98,7 +97,7 @@ button:hover {
 }
 #page-container {
     position: relative;
-    min-height: 100vh;
+    min-height: 98vh;
 }
 #content-wrap {
     padding-bottom: 2rem;    

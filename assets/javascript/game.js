@@ -288,55 +288,6 @@
             $('#message-2').html('Click restart to play again!');
         }
 
-        // function run if game ends and user clicks restart button to play again
-        let restartGame = () => {
-            $('*').show();
-            start();
-            textClear();
-            player = [
-                {
-                    name: "Obi-Wan Kenobi",
-                    hp: 120,
-                    attack: 15,
-                    defender: false,
-                    alive: true,
-                },
-                {
-                    name: "Luke Skywalker",
-                    hp: 100,
-                    attack: 5,
-                    defender: false,
-                    alive: true,
-                },
-                {
-                    name: "Darth Sidious",
-                    hp: 130,
-                    attack: 20,
-                    defender: false,
-                    alive: true,
-                },
-                {
-                    name: "Darth Maul",
-                    hp: 110,
-                    attack: 10,
-                    defender: false,
-                    alive: true,
-                }
-            ];
-            defenderAttack0 = player[0].attack;
-            defenderHP0 = player[0].hp;
-            defenderAttack1 = player[1].attack;
-            defenderHP1 = player[1].hp;
-            defenderAttack2 = player[2].attack;
-            defenderHP2 = player[2].hp;
-            defenderAttack3 = player[3].attack;
-            defenderHP3 = player[3].hp;
-            $('#ob-defender-hp').html(120);
-            $('#ls-defender-hp').html(100);
-            $('#ds-defender-hp').html(130);
-            $('#dm-defender-hp').html(110); 
-        }
-
         // -------------------------------------------------------------
         // -------------------------------------------------------------
         // start jquery function
@@ -462,7 +413,7 @@
             
             // Stage 4: game over
             $('#restart-button').on('click', function() {
-                restartGame();
+                window.location.reload(true);
             });
 
         });
